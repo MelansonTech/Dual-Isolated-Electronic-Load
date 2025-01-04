@@ -1,0 +1,7 @@
+Removed Pin From Net: NetName=MASTERON\OFF_CNTRL Pin=Q2-1
+Added Component: Designator=R11(res, 0805, HD)
+Added Pin To Net: NetName=MASTERON\OFF_CNTRL Pin=R11-1
+Added Pin To Net: NetName=NetQ2_1 Pin=Q2-1
+Added Pin To Net: NetName=NetQ2_1 Pin=R11-2
+Added Net: Name=NetQ2_1
+Added Member To Class: ClassName=ELoad Control Assembly Gen 2 - Rev 2 Member=Component R11 Vishay CRCW08051K00JNEA

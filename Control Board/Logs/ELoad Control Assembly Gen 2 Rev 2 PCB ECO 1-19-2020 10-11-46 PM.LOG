@@ -1,0 +1,12 @@
+Removed Pin From Net: NetName=DIFFPAIR_BOOTSUSB_N Pin=MOD1-2
+Removed Pin From Net: NetName=DIFFPAIR_BOOTSUSB_P Pin=MOD1-3
+Removed Pin From Net: NetName=3.3VDC_ISO Pin=R11-2
+Removed Pin From Net: NetName=3.3VDC_ISO Pin=R12-2
+Removed Member From Class: ClassName=ELoad Control Assembly Gen 2 Member=R11
+Removed Member From Class: ClassName=ELoad Control Assembly Gen 2 Member=R12
+Added Pin To Net: NetName=DIFFPAIR_BOOTSUSB_P Pin=MOD1-2
+Added Pin To Net: NetName=DIFFPAIR_BOOTSUSB_N Pin=MOD1-3
+Added Pin To Net: NetName=GND_ISO Pin=SW1-1
+Added Pin To Net: NetName=GND_ISO Pin=SW2-1
+Change Class Name : Old Net Name=ELoad Control Assembly Gen 2 New Net Name=ELoad Control Assembly Gen 2 - Rev 2
+Change Class Name : Old Net Name=ELoad Control Assembly Gen 2 - PSU New Net Name=ELoad Control Assembly Gen 2 - PSU - Rev 2

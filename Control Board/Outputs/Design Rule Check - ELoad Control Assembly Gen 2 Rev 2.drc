@@ -1,0 +1,118 @@
+Protel Design System Design Rule Check
+PCB File : C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc
+Date     : 7/8/2020
+Time     : 9:47:28 PM
+
+WARNING: 7 Net Ties failed verification
+   SMT Small Component C28-2u2 (35.514mm,17.677mm) on Bottom Layer, SMT Small Component C28-2u2 (35.514mm,17.677mm) on Bottom Layer, has isolated copper
+   SMT Small Component C18-2u2 (33.075mm,45.8mm) on Bottom Layer, SMT Small Component C18-2u2 (33.075mm,45.8mm) on Bottom Layer, has isolated copper
+   SMT Small Component C10-2u2 (29.825mm,37.475mm) on Bottom Layer, SMT Small Component C10-2u2 (29.825mm,37.475mm) on Bottom Layer, has isolated copper
+   SMT Small Component C33-2u2 (67.5mm,51.7mm) on Bottom Layer, SMT Small Component C33-2u2 (67.5mm,51.7mm) on Bottom Layer, has isolated copper
+   SMT Small Component C34-2u2 (25mm,49.65mm) on Bottom Layer, SMT Small Component C34-2u2 (25mm,49.65mm) on Bottom Layer, has isolated copper
+   SMT Small Component C35-2u2 (25.976mm,27.267mm) on Bottom Layer, SMT Small Component C35-2u2 (25.976mm,27.267mm) on Bottom Layer, has isolated copper
+   SMT Small Component C36-2u2 (31.742mm,55.024mm) on Bottom Layer, SMT Small Component C36-2u2 (31.742mm,55.024mm) on Bottom Layer, has isolated copper
+
+WARNING: Unplated multi-layer pad(s) detected
+   Pad MOD2-17(53.33mm,71.4mm)  Multi-Layer on Net GND_ISO
+   Pad M2-0(80.4mm,73.6mm)  Multi-Layer on Net CHASSIS
+   Pad M4-0(9.2mm,73mm)  Multi-Layer on Net CHASSIS
+   Pad M5-0(9.2mm,40.45mm)  Multi-Layer on Net CHASSIS
+   Pad M3-0(9.2mm,7.9mm)  Multi-Layer on Net CHASSIS
+   Pad M1-0(80.4mm,7.9mm)  Multi-Layer on Net CHASSIS
+
+Processing Rule : Clearance Constraint (Gap=2mm) (InNetClass('Low Volt LD2')),(InNetClass('Low Volt LD1'))
+Rule Violations :0
+
+Processing Rule : Clearance Constraint (Gap=2mm) (InNetClass('Low Volt')),(InNetClass('Low Volt LD2'))
+Rule Violations :0
+
+Processing Rule : Clearance Constraint (Gap=2mm) (InNetClass('Low Volt')),(InNetClass('Low Volt LD1'))
+Rule Violations :0
+
+Processing Rule : Unpoured Polygon (Allow unpoured: False)
+Rule Violations :0
+
+Processing Rule : Silk primitive without silk layer
+Rule Violations :0
+
+Processing Rule : Silk to Silk (Clearance=0.05mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Silk To Solder Mask (Clearance=0mm) (IsPad),(All)
+Rule Violations :0
+
+Processing Rule : Minimum Solder Mask Sliver (Gap=0.05mm) (All),(All)
+   Violation between Via (39.575mm,49.8mm) Top Layer to Bottom Layer and 
+                     Pad U2-21(39.525mm,48.575mm)  Bottom Layer
+   Violation between Via (51.95mm,35.463mm) Top Layer to Bottom Layer and 
+                     Pad C17-1(51.95mm,36.625mm)  Bottom Layer
+   Violation between Via (51.95mm,35.463mm) Top Layer to Bottom Layer and 
+                     Pad C8-1(51.925mm,34.275mm)  Bottom Layer
+   Violation between Via (54.965mm,41.665mm) Top Layer to Bottom Layer and 
+                     Pad U3-2(56.6mm,41.665mm)  Bottom Layer
+   Violation between Via (45.575mm,39.025mm) Top Layer to Bottom Layer and 
+                     Via (45.577mm,39.875mm) Top Layer to Bottom Layer
+   Violation between Via (48.325mm,33.45mm) Top Layer to Bottom Layer and 
+                     Via (47.475mm,33.4mm) Top Layer to Bottom Layer
+   Violation between Via (40.25mm,35.85mm) Top Layer to Bottom Layer and 
+                     Via (40.825mm,35.25mm) Top Layer to Bottom Layer
+Rule Violations :7
+
+Processing Rule : Hole To Hole Clearance (Gap=0.254mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Hole Size Constraint (Min=0.025mm) (Max=2.54mm) (All)
+   Violation between Hole Size Constraint (3.5mm > 2.54mm) : Pad MOD2-17(53.33mm,71.4mm)  Multi-Layer
+   Violation between Hole Size Constraint (5mm > 2.54mm) : Pad Free-0(93.5mm,37.5mm)  Multi-Layer
+   Violation between Hole Size Constraint (5mm > 2.54mm) : Pad Free-0(93.5mm,46.5mm)  Multi-Layer
+   Violation between Hole Size Constraint (5mm > 2.54mm) : Pad Free-0(89mm,10mm)  Multi-Layer
+   Violation between Hole Size Constraint (2.6mm > 2.54mm) : Pad SW1-6(63.025mm,68.2mm)  Multi-Layer
+   Violation between Hole Size Constraint (2.6mm > 2.54mm) : Pad SW1-7(74.425mm,68.2mm)  Multi-Layer
+   Violation between Hole Size Constraint (2.6mm > 2.54mm) : Pad SW2-6(63.025mm,15.025mm)  Multi-Layer
+   Violation between Hole Size Constraint (2.6mm > 2.54mm) : Pad SW2-7(74.425mm,15.025mm)  Multi-Layer
+   Violation between Hole Size Constraint (3mm > 2.54mm) : Pad M2-0(80.4mm,73.6mm)  Multi-Layer
+   Violation between Hole Size Constraint (3mm > 2.54mm) : Pad M4-0(9.2mm,73mm)  Multi-Layer
+   Violation between Hole Size Constraint (3mm > 2.54mm) : Pad M5-0(9.2mm,40.45mm)  Multi-Layer
+   Violation between Hole Size Constraint (3mm > 2.54mm) : Pad M3-0(9.2mm,7.9mm)  Multi-Layer
+   Violation between Hole Size Constraint (3mm > 2.54mm) : Pad M1-0(80.4mm,7.9mm)  Multi-Layer
+Rule Violations :13
+
+Processing Rule : Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (All)
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=0.254mm) (Max=10mm) (Preferred=0.254mm) (All)
+Rule Violations :0
+
+Processing Rule : Power Plane Connect Rule(Direct Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (All)
+Rule Violations :0
+
+Processing Rule : Clearance Constraint (Gap=0.145mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Un-Routed Net Constraint ( (All) )
+   Violation between Isolated copper: Split Plane  (3.3VDC_ISO)  on Internal Plane 1. Dead copper detected. Copper area is : 0.18 sq. mm
+   Violation between Isolated copper: Split Plane  (3.3VDC_ISO)  on Internal Plane 1. Dead copper detected. Copper area is : 0.15 sq. mm
+   Violation between Un-Routed Net Constraint: Unplated Pad MOD2-17(53.33mm,71.4mm)  Multi-Layer
+   Violation between Un-Routed Net Constraint: Net CHASSIS Between Pad M5-0 [Unplated] (9.2,40.45mm) And Pad M4-0 [Unplated] (9.2,73mm)
+   Violation between Un-Routed Net Constraint: Net CHASSIS Between Pad M3-0 [Unplated] (9.2,7.9mm) And Pad M5-0 [Unplated] (9.2,40.45mm)
+   Violation between Un-Routed Net Constraint: Net CHASSIS Between Pad M2-0 [Unplated] (80.4,73.6mm) And Pad M1-0 [Unplated] (80.4,7.9mm)
+   Violation between Un-Routed Net Constraint: Net CHASSIS Between Pad M3-0 [Unplated] (9.2,7.9mm) And Pad M1-0 [Unplated] (80.4,7.9mm)
+   Violation between Un-Routed Net Constraint: Unplated Pad M1-0(80.4mm,7.9mm)  Multi-Layer
+   Violation between Un-Routed Net Constraint: Unplated Pad M3-0(9.2mm,7.9mm)  Multi-Layer
+   Violation between Un-Routed Net Constraint: Unplated Pad M5-0(9.2mm,40.45mm)  Multi-Layer
+   Violation between Un-Routed Net Constraint: Unplated Pad M4-0(9.2mm,73mm)  Multi-Layer
+   Violation between Un-Routed Net Constraint: Unplated Pad M2-0(80.4mm,73.6mm)  Multi-Layer
+Rule Violations :12
+
+Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
+Rule Violations :0
+
+Processing Rule : Clearance Constraint (Gap=3mm) (InNet('CHASSIS')),(All)
+Rule Violations :0
+
+Processing Rule : Clearance Constraint (Gap=1mm) (InNetClass('HS_DiffPair')),(InPolygonClass('All Polygons'))
+Rule Violations :0
+
+
+Violations Detected : 32
+Time Elapsed        : 00:00:02

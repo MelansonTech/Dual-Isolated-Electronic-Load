@@ -1,0 +1,4 @@
+Layer Pairs Export File for PCB: C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc
+LayersSetName=Top_Bot_Plated_Thru_Holes|DrillFile=eload control assembly gen 2 rev 2-roundholes-plated.txt|LayerPairs=gtl,gbl
+LayersSetName=Top_Bot_NonPlated_Thru_Holes|DrillFile=eload control assembly gen 2 rev 2-roundholes-nonplated.txt|LayerPairs=gtl,gbl
+LayersSetName=Top_Bot_NonPlated_Slot_Holes|DrillFile=eload control assembly gen 2 rev 2-slotholes-nonplated.txt|LayerPairs=gtl,gbl

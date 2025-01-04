@@ -1,0 +1,4 @@
+Removed Pin From Net: NetName=NetU2_32 Pin=XTAL1-1
+Removed Pin From Net: NetName=NetU2_33 Pin=XTAL1-3
+Added Pin To Net: NetName=NetU2_33 Pin=XTAL1-1
+Added Pin To Net: NetName=NetU2_32 Pin=XTAL1-3

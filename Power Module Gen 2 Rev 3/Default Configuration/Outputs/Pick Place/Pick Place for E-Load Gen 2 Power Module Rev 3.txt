@@ -1,0 +1,42 @@
+Designator Footprint               Mid X         Mid Y         Ref X         Ref Y         Pad X         Pad Y TB      Rotation Comment        
+
+R10        Fuse,PTC,10mmPitch,Radial,_Disc        79.4mm       103.9mm        79.4mm       103.9mm        79.4mm        98.9mm  T         90.00 PTR030V0800-BK 
+R3         Fuse,PTC,10mmPitch,Radial,_Disc        79.4mm       69.15mm        79.4mm       69.15mm        79.4mm       74.15mm  T        270.00 PTR030V0800-BK 
+C3         Cap,0805             8.0844mm       14.43mm      8.0844mm       14.43mm      7.1344mm       14.43mm  T          0.00 Cap            
+C2         Cap,0805            27.5844mm       14.43mm     27.5844mm       14.43mm     26.6344mm       14.43mm  T        360.00 Cap            
+C1         Cap,0805            20.0844mm       14.43mm     20.0844mm       14.43mm     21.0344mm       14.43mm  T        180.00 Cap            
+M2         Standoff,Hex,M3,8mm        91.5mm        62.9mm        91.5mm        62.9mm        91.5mm        62.9mm  T          0.00 M3 hex Standoff
+D2         SOD123                 98.3mm       110.9mm        98.3mm       110.9mm      96.665mm       110.9mm  B        360.00 MMSZ4705T1G    
+DB1        4-ESIP_WITH_HEAT_SINK    115.6788mm      89.091mm       112.3mm      66.091mm    119.5656mm     77.0718mm  T         90.00 Vishay PB3510-E3/45
+F1         Fuse,TH,Vertical,0505030.MXEP       114.4mm        50.7mm       109.4mm        50.7mm       109.4mm        50.7mm  T        360.00 FUSE CERAMIC 30A 500VAC/VDC 3AB
+F2         Fuse,TH,Vertical,0505030.MXEP       114.3mm       130.9mm       109.3mm       130.9mm       109.3mm       130.9mm  T        360.00 FUSE CERAMIC 30A 500VAC/VDC 3AB
+J1         Connector,TE,3-Pin,Male,Vert,2-644861-3         8.3mm         6.4mm         8.3mm         6.4mm        5.76mm         6.4mm  T        360.00 2-644861-3     
+J2         Keystone_8197       94.0896mm       131.6mm     94.0896mm       131.6mm     97.5948mm       136.6mm  T        270.00 wire teminal, lugs, screw, Keystone 8197
+J3         Keystone_8197        9.2104mm      131.85mm      9.2104mm      131.85mm      5.7052mm      126.85mm  T         90.00 wire teminal, lugs, screw, Keystone 8197
+J4         Keystone_8197        9.5896mm        36.5mm      9.5896mm        36.5mm     13.0948mm        41.5mm  T        270.00 wire teminal, lugs, screw, Keystone 8197
+J5         Keystone_8197       94.0896mm        36.5mm     94.0896mm        36.5mm     97.5948mm        41.5mm  T        270.00 wire teminal, lugs, screw, Keystone 8197
+J6         conn,_molex,_0.1",_4_pin       20.31mm       5.946mm        16.5mm       5.946mm        16.5mm       5.946mm  T         90.00 0022112042     
+J7         Conn,_JST,_4_pin,_2mm_spacing_Right_Angle        31.5mm       7.094mm        31.5mm       7.094mm        34.5mm       7.094mm  T        180.00 JST B4B-PH-K-S(LF)(SN)
+MOD1       MOD,ELOAD_GEN_2_REV_1_SUPPORT        89.4mm         4.1mm        89.4mm         4.1mm      124.96mm         4.1mm  T        180.00 Support PCBA   
+NTC1       NTC,TH,2.54mm_Lead_Spacing,NTCLE100E3103JT2      27.075mm      84.155mm      27.075mm      85.425mm      27.075mm      85.425mm  T        270.00 NTCLE100E3103JT2
+PM1        DUAL_TO-247-RA_WITH_HEATSINK      46.025mm        84.1mm      46.025mm        84.1mm      60.725mm       98.49mm  T          0.00 Diode          
+Q1         SOT23-3             86.0963mm     102.691mm     86.0963mm     102.691mm     85.0375mm    101.7334mm  B        270.00 2N7002ET1G     
+Q2         SOT23-3             86.0963mm      95.691mm     86.0963mm      95.691mm     85.0375mm     94.7334mm  B        270.00 2N7002ET1G     
+Q3         SOT23-3             85.0963mm      86.691mm     85.0963mm      86.691mm     84.0375mm     85.7334mm  B        270.00 2N7002ET1G     
+Q4         DPAK,3-Leads        97.2053mm     101.324mm     96.4053mm     101.324mm    100.8053mm     103.614mm  B        180.00 Infineon IRFR8314TRPBF
+Q5         DPAK,3-Leads        97.2053mm     93.1537mm     96.4053mm     93.1537mm    100.8053mm     95.4437mm  B        180.00 Infineon IRFR8314TRPBF
+Q6         DPAK,3-Leads        97.2053mm     84.9834mm     96.4053mm     84.9834mm    100.8053mm     87.2733mm  B        180.00 Infineon IRFR8314TRPBF
+Q7         DPAK,3-Leads        97.2053mm      76.813mm     96.4053mm      76.813mm    100.8053mm      79.103mm  B        180.00 Infineon IRFR8314TRPBF
+R1         Res_2512                 80mm     104.125mm          80mm     104.125mm          80mm     101.425mm  B         90.00 Res1           
+R2         Res_2512                 80mm       68.75mm          80mm       68.75mm          80mm       71.45mm  B        270.00 Res1           
+R4         Shunt,2512,SMD,Kalvin_conn     83.9963mm      90.991mm     83.9963mm      90.991mm     87.2963mm      90.991mm  B        360.00 Ohmite LVM25FVR030E-TR
+R5         Res,1206            82.6963mm      98.691mm     82.6963mm      98.691mm     81.2463mm      98.691mm  B        180.00 Res,1206,0.330Ohm,shunt,0.75W,1%,50ppm,KRL1632E-M-R330-F-T5
+R6         Res,2827,4W         83.3963mm      80.291mm     83.3963mm      80.291mm     86.5263mm      80.291mm  B        180.00 CSSH2728FT10L0 
+R7         res,_0805,_HD            89mm       103.7mm          89mm       103.7mm          89mm      102.75mm  B         90.00 Vishay / Dale CRCW080510K0FKTA
+R8         res,_0805,_HD          89.1mm        96.7mm        89.1mm        96.7mm        89.1mm       95.75mm  B         90.00 Vishay / Dale CRCW080510K0FKTA
+R9         res,_0805,_HD          89.1mm        86.7mm        89.1mm        86.7mm        89.1mm       87.65mm  B        270.00 Vishay / Dale CRCW080510K0FKTA
+M1         Standoff,Hex,M3,8mm       110.1mm        30.3mm       110.1mm        30.3mm       110.1mm        30.3mm  T          0.00 M3 hex Standoff
+M5         Standoff,Hex,M3,8mm       115.9mm       140.5mm       115.9mm       140.5mm       115.9mm       140.5mm  T          0.00 M3 hex Standoff
+M4         Standoff,Hex,M3,8mm         3.6mm      116.35mm         3.6mm      116.35mm         3.6mm      116.35mm  T          0.00 M3 hex Standoff
+M3         Standoff,Hex,M3,8mm         3.6mm          52mm         3.6mm          52mm         3.6mm          52mm  T          0.00 M3 hex Standoff
+

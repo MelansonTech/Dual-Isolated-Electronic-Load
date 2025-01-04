@@ -1,0 +1,465 @@
+*************************************************************
+FileName = E-Load Gen 2 Power Module Rev 3.GBR
+AutoAperture = True
+*************************************************************
+Generating : Top Layer
+      File : E-Load Gen 2 Power Module Rev 3.GTL
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Outline
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D10
+    D11
+    D12
+    D13
+    D14
+    D15
+    D16
+    D17
+    D18
+    D19
+    D20
+    D21
+    D22
+    D23
+    D24
+    D25
+    D26
+*************************************************************
+
+*************************************************************
+Generating : Bottom Layer
+      File : E-Load Gen 2 Power Module Rev 3.GBL
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Outline
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D11
+    D12
+    D13
+    D14
+    D15
+    D16
+    D17
+    D18
+    D19
+    D20
+    D21
+    D22
+    D23
+    D24
+    D25
+    D26
+    D27
+    D28
+    D29
+    D30
+    D31
+    D32
+    D33
+    D34
+    D35
+    D36
+    D37
+*************************************************************
+
+*************************************************************
+Generating : Bottom Pad Master
+      File : E-Load Gen 2 Power Module Rev 3.GPB
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+    Adding Layer      : Outline
+
+
+Used DCodes :
+    D11
+    D13
+    D14
+    D15
+    D16
+    D17
+    D18
+    D19
+    D20
+    D21
+    D22
+    D23
+    D24
+    D25
+    D28
+    D29
+    D30
+    D31
+    D32
+    D33
+    D34
+    D35
+    D36
+    D37
+*************************************************************
+
+*************************************************************
+Generating : Top Pad Master
+      File : E-Load Gen 2 Power Module Rev 3.GPT
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
+
+    Adding Layer      : Outline
+
+
+Used DCodes :
+    D10
+    D11
+    D13
+    D14
+    D15
+    D16
+    D17
+    D18
+    D19
+    D20
+    D21
+    D22
+    D23
+    D24
+    D25
+*************************************************************
+
+*************************************************************
+Generating : Top Overlay
+      File : E-Load Gen 2 Power Module Rev 3.GTO
+
+    Adding Layer      : Top Overlay
+
+    Adding Layer      : Outline
+
+
+Used DCodes :
+    D11
+    D12
+    D38
+    D39
+    D40
+*************************************************************
+
+*************************************************************
+Generating : Top Paste
+      File : E-Load Gen 2 Power Module Rev 3.GTP
+
+    Adding Layer      : Top Paste
+
+    Adding Layer      : Outline
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D10
+    D11
+*************************************************************
+
+*************************************************************
+Generating : Top Solder
+      File : E-Load Gen 2 Power Module Rev 3.GTS
+
+    Adding Layer      : Top Solder
+
+    Adding Layer      : Outline
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D11
+    D41
+    D42
+    D43
+    D44
+    D45
+    D46
+    D47
+    D48
+    D49
+    D50
+    D51
+    D52
+    D53
+    D54
+    D55
+    D56
+*************************************************************
+
+*************************************************************
+Generating : Bottom Solder
+      File : E-Load Gen 2 Power Module Rev 3.GBS
+
+    Adding Layer      : Bottom Solder
+
+    Adding Layer      : Outline
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D11
+    D42
+    D43
+    D44
+    D45
+    D46
+    D47
+    D48
+    D49
+    D50
+    D51
+    D52
+    D53
+    D54
+    D55
+    D56
+    D57
+    D58
+    D59
+    D60
+    D61
+    D62
+    D63
+    D64
+    D65
+    D66
+*************************************************************
+
+*************************************************************
+Generating : Bottom Paste
+      File : E-Load Gen 2 Power Module Rev 3.GBP
+
+    Adding Layer      : Bottom Paste
+
+    Adding Layer      : Outline
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D11
+    D28
+    D29
+    D30
+    D31
+    D32
+    D33
+    D34
+    D35
+    D36
+    D37
+*************************************************************
+
+*************************************************************
+Generating : Bottom Overlay
+      File : E-Load Gen 2 Power Module Rev 3.GBO
+
+    Adding Layer      : Bottom Overlay
+
+    Adding Layer      : Outline
+
+
+Used DCodes :
+    D11
+    D38
+    D39
+    D67
+    D68
+*************************************************************
+
+*************************************************************
+Generating : Keep-Out Layer
+      File : E-Load Gen 2 Power Module Rev 3.GKO
+
+    Adding Layer      : Keep-Out Layer
+
+    Adding Layer      : Outline
+
+
+Used DCodes :
+    D11
+*************************************************************
+
+*************************************************************
+Generating : Outline
+      File : E-Load Gen 2 Power Module Rev 3.Outline
+
+    Adding Layer      : Outline
+
+    Adding Layer      : Outline
+
+
+Used DCodes :
+    D11
+*************************************************************
+
+*************************************************************
+Generating : Mechanical 3
+      File : E-Load Gen 2 Power Module Rev 3.GM3
+
+    Adding Layer      : Mechanical 3
+
+    Adding Layer      : Outline
+
+
+Used DCodes :
+    D11
+*************************************************************
+
+*************************************************************
+Generating : Assembly Top
+      File : E-Load Gen 2 Power Module Rev 3.Assembly Top
+
+    Adding Layer      : Assembly Top
+
+    Adding Layer      : Outline
+
+
+Used DCodes :
+    D11
+    D12
+    D38
+    D39
+    D40
+    D68
+    D69
+*************************************************************
+
+*************************************************************
+Generating : Assembly Bottom
+      File : E-Load Gen 2 Power Module Rev 3.Assembly Bottom
+
+    Adding Layer      : Assembly Bottom
+
+    Adding Layer      : Outline
+
+
+Used DCodes :
+    D11
+    D39
+    D68
+*************************************************************
+
+*************************************************************
+Generating : 3D Top
+      File : E-Load Gen 2 Power Module Rev 3.3D Top
+
+    Adding Layer      : 3D Top
+
+    Adding Layer      : Outline
+
+
+Used DCodes :
+    D11
+*************************************************************
+
+*************************************************************
+Generating : 3D Bottom
+      File : E-Load Gen 2 Power Module Rev 3.3D Bottom
+
+    Adding Layer      : 3D Bottom
+
+    Adding Layer      : Outline
+
+
+Used DCodes :
+    D11
+    D68
+*************************************************************
+
+*************************************************************
+Generating : Courtyard Top
+      File : E-Load Gen 2 Power Module Rev 3.Courtyard Top
+
+    Adding Layer      : Courtyard Top
+
+    Adding Layer      : Outline
+
+
+Used DCodes :
+    D11
+    D12
+    D39
+    D40
+    D68
+    D69
+    D70
+*************************************************************
+
+*************************************************************
+Generating : Courtyard Bottom
+      File : E-Load Gen 2 Power Module Rev 3.Courtyard Bottom
+
+    Adding Layer      : Courtyard Bottom
+
+    Adding Layer      : Outline
+
+
+Used DCodes :
+    D11
+    D39
+    D68
+    D70
+*************************************************************
+
+*************************************************************
+Generating : Drill Drawing
+      File : E-Load Gen 2 Power Module Rev 3.GD1
+
+    Adding Layer      : Outline
+
+    Adding Drill Pair : Top Layer-Bottom Layer
+
+    Adding Layer      : Drill Drawing
+
+
+Used DCodes :
+    D11
+    D71
+    D72
+    D73
+*************************************************************
+
+*************************************************************
+Generating : Drill Guide
+      File : E-Load Gen 2 Power Module Rev 3.GG1
+
+    Adding Layer      : Outline
+
+    Adding Drill Pair : Top Layer-Bottom Layer
+
+    Adding Layer      : Drill Guide
+
+
+Used DCodes :
+    D11
+    D74
+*************************************************************
+

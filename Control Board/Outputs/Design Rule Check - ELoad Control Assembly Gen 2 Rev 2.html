@@ -1,0 +1,527 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 {
+			font-family : segoe ui;
+			color : black;
+			background-color : #E2F2F8;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body {
+			font-family : segoe ui;
+		}
+
+		td, th {
+			padding: 0.5em;
+			text-align : left;
+			width: 10em;
+		}
+		th {
+			background-color : #EEEEEE;
+
+		}
+		th.column1, td.column1 {
+			text-align: left;
+			width : auto;
+		}
+		table {
+			width : 100%;
+			font-size: 0.9em;
+		}
+
+		.DRC_summary_header {
+			padding-bottom : 0.1em;
+			border : 0px solid black;
+			width: 100%;
+			align: left;
+		}
+
+		.DRC_summary_header_col1,
+		.DRC_summary_header_col2, 
+		.DRC_summary_header_col3 {
+			color : black;
+			font-size:100%;
+			padding : 0em;
+			padding-top : 0.2em;
+			padding-bottom 0.2em;
+			border : 0px solid black;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.DRC_summary_header_col1 {
+			font-weight: bold;
+			width: 8em;
+		}
+
+		.DRC_summary_header_col2 {
+			width: 0.1em;
+		
+		}
+
+		.DRC_summary_header_col3 {
+			width : auto;
+		}
+
+		.header_holder {
+		    Width = 100%;
+		    border = 0px solid green;
+		    padding = 0;
+		}
+
+
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 8em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error {
+			color : red;
+			font-weight : bold;
+		}
+		tr.onmouseout_odd {
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}
+	</script><title>Design Rule Verification Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\CS\Templates\CircuitStudio_logo.png
+		"><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td class="column1">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">7/8/2020</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">9:47:28 PM</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:02</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc" class="file"><acronym title="C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc">C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td class="column2">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Errors:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3">0</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Warnings:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">13</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">32</td></tr>
+</table>
+</td>
+</table><a name="IDOU5DETW2OKKXNWPLMW3JP4T4UD5NRPKQNKNJG5MXDZT2ECOSTCFG"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Errors</th>
+<th class="column2">Count</th>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">0</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID1H3DLSGS4WXTPU1CTVK0IPGRIJMNWH241KMWQSFRY1M5V5GNDMVN">7 Net Ties failed verification</a></td>
+<td class="column2">7</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDTK0GKTJGBYD4F4YR1NWR5S5DCXP4SOBHCTCNI3NXRTYBY20TCO">Unplated multi-layer pad(s) detected</a></td>
+<td class="column2">6</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">13</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDH2DNVYIZYNJ2HSRGED4MHMHJVDMRHP0RQJ5OCDMVSCHNTWD4BBH">Clearance Constraint (Gap=2mm) (InNetClass('Low Volt LD2')),(InNetClass('Low Volt LD1'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID40UNWUCCSIAIHINIE0FY0M1T2LMI4NQHVH4D1NL3PF2V0U2JYHAE">Clearance Constraint (Gap=2mm) (InNetClass('Low Volt')),(InNetClass('Low Volt LD2'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDZBJ2TD2C50KSKZ0K555CBMSEMKYFA5HVZMUSZUHZ0QV5LV0QOZP">Clearance Constraint (Gap=2mm) (InNetClass('Low Volt')),(InNetClass('Low Volt LD1'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID25WZOV4N2ZNMJTBCU2RG52NE2HC5AKHMH2FFADG4ECBPQHU2X0OG">Unpoured Polygon (Allow unpoured: False)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDQ5D4ZXECQOYQFVNQ12BT03SLINHRO2EMM1I5L0LWGLWC2SMJNTQP">Silk primitive without silk layer</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDN4UBTXRYOOODCA2URZFDDLE3VJSACRXOSTXT5C04EA0UIXXXTPG">Silk to Silk (Clearance=0.05mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDHPV5TAOX4VMPNVYCDEAN34HJ4EFHVIXSGS2G54MNDZ1PVJJMACZ">Silk To Solder Mask (Clearance=0mm) (IsPad),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDNBUYVPESS1BUGPVRNJRLSGSISCRLMSJNKRXFGYBWIY2G3WMTKDXB">Minimum Solder Mask Sliver (Gap=0.05mm) (All),(All)</a></td>
+<td class="column2">7</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDH5SSQZWRHT2GIFVC4IO2T5U0BNCXIWPEW3GJBDHUZVDYYPJ5BHIJ">Hole To Hole Clearance (Gap=0.254mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDRKYJ2X0P22KPDLH0WU4FU51IALMQI1IG5H02ADEVDTMPFN3ZYCLK">Hole Size Constraint (Min=0.025mm) (Max=2.54mm) (All)</a></td>
+<td class="column2">13</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDKDJYZYACVUCCN5PBJ0TC5EHLIBHJMJB442GC4SORIL0WHOIRHQUM">Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID24UO4NMK0IZ2INBMXMNM3NG5UHN1MGF4ZBEXCOO0UBCHIHPMCZFI">Width Constraint (Min=0.254mm) (Max=10mm) (Preferred=0.254mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID1P4ZLLBP5VD3MCCDKF4LIT53P4EM4AYCTGMLJHYWTPPJNIJXGUP">Power Plane Connect Rule(Direct Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDUA333VIKXVQFM01SJVJOYWTNGHKJIAEJ3YPQHLADTHUOGTI5H5P">Clearance Constraint (Gap=0.145mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID12P1K35MMCCOOLR5BFWNPE0E1FCP0JBFLDQ1SSLKTW3NOWNC3VVE">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">12</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDINSFDZADDKTFD5QUZFSD5P0MOLSL0XZ43HNRXPFCTU3LUFSAO13">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDVGYN5YJRVURUGXSJFADDEJAKNHM2BOI15WZLQOH2DZEBKOWWZJ1D">Clearance Constraint (Gap=3mm) (InNet('CHASSIS')),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDECU0U54CGUYDPRY0HNGT0OGAJGIEYJDCU4OPYKPYO41HGW4KI21L">Clearance Constraint (Gap=1mm) (InNetClass('HS_DiffPair')),(InPolygonClass('All Polygons'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">32</td>
+</tr>
+</table><br><a name="IDCPT1SR4WGXVZIQIUJSLXGIHEFFFHV4NSHKEG0IKHWCYMLPXQH4IF"><h2>Warnings</h2></a><a name="ID1H3DLSGS4WXTPU1CTVK0IPGRIJMNWH241KMWQSFRY1M5V5GNDMVN"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="warning">7 Net Ties failed verification</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1804.905mil|Location2.X=1935.197mil|Location1.Y=1642.795mil|Location2.Y=1789.515mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1804.905mil|Location2.X=1935.197mil|Location1.Y=1642.795mil|Location2.Y=1789.515mil|Absolute=True">SMT Small Component C28-2u2 (35.514mm,17.677mm) on Bottom Layer</acronym></a>, SMT Small Component C28-2u2 (35.514mm,17.677mm) on Bottom Layer, has isolated copper</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1737.205mil|Location2.X=1812.008mil|Location1.Y=2726.22mil|Location2.Y=2848.425mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1737.205mil|Location2.X=1812.008mil|Location1.Y=2726.22mil|Location2.Y=2848.425mil|Absolute=True">SMT Small Component C18-2u2 (33.075mm,45.8mm) on Bottom Layer</acronym></a>, SMT Small Component C18-2u2 (33.075mm,45.8mm) on Bottom Layer, has isolated copper</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1511.653mil|Location2.X=1689.961mil|Location1.Y=2384.843mil|Location2.Y=2534.449mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1511.653mil|Location2.X=1689.961mil|Location1.Y=2384.843mil|Location2.Y=2534.449mil|Absolute=True">SMT Small Component C10-2u2 (29.825mm,37.475mm) on Bottom Layer</acronym></a>, SMT Small Component C10-2u2 (29.825mm,37.475mm) on Bottom Layer, has isolated copper</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2974.251mil|Location2.X=3173.228mil|Location1.Y=2944.882mil|Location2.Y=3276.37mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2974.251mil|Location2.X=3173.228mil|Location1.Y=2944.882mil|Location2.Y=3276.37mil|Absolute=True">SMT Small Component C33-2u2 (67.5mm,51.7mm) on Bottom Layer</acronym></a>, SMT Small Component C33-2u2 (67.5mm,51.7mm) on Bottom Layer, has isolated copper</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1413.386mil|Location2.X=1500mil|Location1.Y=2864.173mil|Location2.Y=3146.449mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1413.386mil|Location2.X=1500mil|Location1.Y=2864.173mil|Location2.Y=3146.449mil|Absolute=True">SMT Small Component C34-2u2 (25mm,49.65mm) on Bottom Layer</acronym></a>, SMT Small Component C34-2u2 (25mm,49.65mm) on Bottom Layer, has isolated copper</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1451.825mil|Location2.X=1538.44mil|Location1.Y=1982.953mil|Location2.Y=2268.497mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1451.825mil|Location2.X=1538.44mil|Location1.Y=1982.953mil|Location2.Y=2268.497mil|Absolute=True">SMT Small Component C35-2u2 (25.976mm,27.267mm) on Bottom Layer</acronym></a>, SMT Small Component C35-2u2 (25.976mm,27.267mm) on Bottom Layer, has isolated copper</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1505.125mil|Location2.X=1796.918mil|Location1.Y=3107.23mil|Location2.Y=3193.844mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1505.125mil|Location2.X=1796.918mil|Location1.Y=3107.23mil|Location2.Y=3193.844mil|Absolute=True">SMT Small Component C36-2u2 (31.742mm,55.024mm) on Bottom Layer</acronym></a>, SMT Small Component C36-2u2 (31.742mm,55.024mm) on Bottom Layer, has isolated copper</td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDTK0GKTJGBYD4F4YR1NWR5S5DCXP4SOBHCTCNI3NXRTYBY20TCO"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="warning">Unplated multi-layer pad(s) detected</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2449.937mil|Location2.X=2694.157mil|Location1.Y=3673.165mil|Location2.Y=3917.385mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2449.937mil|Location2.X=2694.157mil|Location1.Y=3673.165mil|Location2.Y=3917.385mil|Absolute=True">Pad MOD2-17(53.33mm,71.4mm)  Multi-Layer</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True">Net GND_ISO</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3515.685mil|Location2.X=3759.905mil|Location1.Y=3759.779mil|Location2.Y=4003.999mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3515.685mil|Location2.X=3759.905mil|Location1.Y=3759.779mil|Location2.Y=4003.999mil|Absolute=True">Pad M2-0(80.4mm,73.6mm)  Multi-Layer</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True">Net CHASSIS</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=712.535mil|Location2.X=956.756mil|Location1.Y=3736.157mil|Location2.Y=3980.378mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=712.535mil|Location2.X=956.756mil|Location1.Y=3736.157mil|Location2.Y=3980.378mil|Absolute=True">Pad M4-0(9.2mm,73mm)  Multi-Layer</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True">Net CHASSIS</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=712.535mil|Location2.X=956.756mil|Location1.Y=2454.661mil|Location2.Y=2698.882mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=712.535mil|Location2.X=956.756mil|Location1.Y=2454.661mil|Location2.Y=2698.882mil|Absolute=True">Pad M5-0(9.2mm,40.45mm)  Multi-Layer</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True">Net CHASSIS</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=712.535mil|Location2.X=956.756mil|Location1.Y=1173.165mil|Location2.Y=1417.386mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=712.535mil|Location2.X=956.756mil|Location1.Y=1173.165mil|Location2.Y=1417.386mil|Absolute=True">Pad M3-0(9.2mm,7.9mm)  Multi-Layer</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True">Net CHASSIS</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3515.685mil|Location2.X=3759.905mil|Location1.Y=1173.165mil|Location2.Y=1417.386mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3515.685mil|Location2.X=3759.905mil|Location1.Y=1173.165mil|Location2.Y=1417.386mil|Absolute=True">Pad M1-0(80.4mm,7.9mm)  Multi-Layer</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True">Net CHASSIS</acronym></a></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDNBUYVPESS1BUGPVRNJRLSGSISCRLMSJNKRXFGYBWIY2G3WMTKDXB"><table>
+<tr>
+<th style="text-align : left" colspan="2" class="rule">Minimum Solder Mask Sliver (Gap=0.05mm) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2004.921mil|Location2.X=2056.102mil|Location1.Y=2919.291mil|Location2.Y=2970.472mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2004.921mil|Location2.X=2056.102mil|Location1.Y=2919.291mil|Location2.Y=2970.472mil|Absolute=True">Via (39.575mm,49.8mm) Top Layer to Bottom Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2017.634mil|Location2.X=2039.453mil|Location1.Y=2865.665mil|Location2.Y=2927.641mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2017.634mil|Location2.X=2039.453mil|Location1.Y=2865.665mil|Location2.Y=2927.641mil|Absolute=True">Pad U2-21(39.525mm,48.575mm)  Bottom Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2492.126mil|Location2.X=2543.307mil|Location1.Y=2354.823mil|Location2.Y=2406.004mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2492.126mil|Location2.X=2543.307mil|Location1.Y=2354.823mil|Location2.Y=2406.004mil|Absolute=True">Via (51.95mm,35.463mm) Top Layer to Bottom Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2482.22mil|Location2.X=2553.213mil|Location1.Y=2396.591mil|Location2.Y=2455.772mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2482.22mil|Location2.X=2553.213mil|Location1.Y=2396.591mil|Location2.Y=2455.772mil|Absolute=True">Pad C17-1(51.95mm,36.625mm)  Bottom Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2492.126mil|Location2.X=2543.307mil|Location1.Y=2354.823mil|Location2.Y=2406.004mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2492.126mil|Location2.X=2543.307mil|Location1.Y=2354.823mil|Location2.Y=2406.004mil|Absolute=True">Via (51.95mm,35.463mm) Top Layer to Bottom Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2481.236mil|Location2.X=2552.228mil|Location1.Y=2304.071mil|Location2.Y=2363.252mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2481.236mil|Location2.X=2552.228mil|Location1.Y=2304.071mil|Location2.Y=2363.252mil|Absolute=True">Pad C8-1(51.925mm,34.275mm)  Bottom Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2610.827mil|Location2.X=2662.008mil|Location1.Y=2599.016mil|Location2.Y=2650.197mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2610.827mil|Location2.X=2662.008mil|Location1.Y=2599.016mil|Location2.Y=2650.197mil|Absolute=True">Via (54.965mm,41.665mm) Top Layer to Bottom Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2653.481mil|Location2.X=2748.095mil|Location1.Y=2608.795mil|Location2.Y=2640.417mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2653.481mil|Location2.X=2748.095mil|Location1.Y=2608.795mil|Location2.Y=2640.417mil|Absolute=True">Pad U3-2(56.6mm,41.665mm)  Bottom Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2241.142mil|Location2.X=2292.323mil|Location1.Y=2495.079mil|Location2.Y=2546.26mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2241.142mil|Location2.X=2292.323mil|Location1.Y=2495.079mil|Location2.Y=2546.26mil|Absolute=True">Via (45.575mm,39.025mm) Top Layer to Bottom Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2241.221mil|Location2.X=2292.402mil|Location1.Y=2528.543mil|Location2.Y=2579.724mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2241.221mil|Location2.X=2292.402mil|Location1.Y=2528.543mil|Location2.Y=2579.724mil|Absolute=True">Via (45.577mm,39.875mm) Top Layer to Bottom Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2349.41mil|Location2.X=2400.59mil|Location1.Y=2275.59mil|Location2.Y=2326.771mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2349.41mil|Location2.X=2400.59mil|Location1.Y=2275.59mil|Location2.Y=2326.771mil|Absolute=True">Via (48.325mm,33.45mm) Top Layer to Bottom Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2315.945mil|Location2.X=2367.126mil|Location1.Y=2273.622mil|Location2.Y=2324.803mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2315.945mil|Location2.X=2367.126mil|Location1.Y=2273.622mil|Location2.Y=2324.803mil|Absolute=True">Via (47.475mm,33.4mm) Top Layer to Bottom Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2031.497mil|Location2.X=2082.678mil|Location1.Y=2370.079mil|Location2.Y=2421.26mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2031.497mil|Location2.X=2082.678mil|Location1.Y=2370.079mil|Location2.Y=2421.26mil|Absolute=True">Via (40.25mm,35.85mm) Top Layer to Bottom Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2054.134mil|Location2.X=2105.315mil|Location1.Y=2346.457mil|Location2.Y=2397.638mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2054.134mil|Location2.X=2105.315mil|Location1.Y=2346.457mil|Location2.Y=2397.638mil|Absolute=True">Via (40.825mm,35.25mm) Top Layer to Bottom Layer</acronym></a></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDRKYJ2X0P22KPDLH0WU4FU51IALMQI1IG5H02ADEVDTMPFN3ZYCLK"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Hole Size Constraint (Min=0.025mm) (Max=2.54mm) (All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2502.524mil|Location2.X=2641.569mil|Location1.Y=3725.753mil|Location2.Y=3864.798mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2502.524mil|Location2.X=2641.569mil|Location1.Y=3725.753mil|Location2.Y=3864.798mil|Absolute=True">Hole Size Constraint (3.5mm &gt; 2.54mm) : Pad MOD2-17(53.33mm,71.4mm)  Multi-Layer</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4054.493mil|Location2.X=4252.593mil|Location1.Y=2361.58mil|Location2.Y=2559.68mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4054.493mil|Location2.X=4252.593mil|Location1.Y=2361.58mil|Location2.Y=2559.68mil|Absolute=True">Hole Size Constraint (5mm &gt; 2.54mm) : Pad Free-0(93.5mm,37.5mm)  Multi-Layer</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4054.493mil|Location2.X=4252.593mil|Location1.Y=2715.91mil|Location2.Y=2914.011mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4054.493mil|Location2.X=4252.593mil|Location1.Y=2715.91mil|Location2.Y=2914.011mil|Absolute=True">Hole Size Constraint (5mm &gt; 2.54mm) : Pad Free-0(93.5mm,46.5mm)  Multi-Layer</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3878.317mil|Location2.X=4074.439mil|Location1.Y=1279.892mil|Location2.Y=1476.014mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3878.317mil|Location2.X=4074.439mil|Location1.Y=1279.892mil|Location2.Y=1476.014mil|Absolute=True">Hole Size Constraint (5mm &gt; 2.54mm) : Pad Free-0(89mm,10mm)  Multi-Layer</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2901.934mil|Location2.X=3005.546mil|Location1.Y=3617.485mil|Location2.Y=3721.097mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2901.934mil|Location2.X=3005.546mil|Location1.Y=3617.485mil|Location2.Y=3721.097mil|Absolute=True">Hole Size Constraint (2.6mm &gt; 2.54mm) : Pad SW1-6(63.025mm,68.2mm)  Multi-Layer</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3350.753mil|Location2.X=3454.365mil|Location1.Y=3617.485mil|Location2.Y=3721.097mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3350.753mil|Location2.X=3454.365mil|Location1.Y=3617.485mil|Location2.Y=3721.097mil|Absolute=True">Hole Size Constraint (2.6mm &gt; 2.54mm) : Pad SW1-7(74.425mm,68.2mm)  Multi-Layer</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2901.934mil|Location2.X=3005.546mil|Location1.Y=1523.981mil|Location2.Y=1627.593mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2901.934mil|Location2.X=3005.546mil|Location1.Y=1523.981mil|Location2.Y=1627.593mil|Absolute=True">Hole Size Constraint (2.6mm &gt; 2.54mm) : Pad SW2-6(63.025mm,15.025mm)  Multi-Layer</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3350.753mil|Location2.X=3454.365mil|Location1.Y=1523.981mil|Location2.Y=1627.593mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3350.753mil|Location2.X=3454.365mil|Location1.Y=1523.981mil|Location2.Y=1627.593mil|Absolute=True">Hole Size Constraint (2.6mm &gt; 2.54mm) : Pad SW2-7(74.425mm,15.025mm)  Multi-Layer</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3578.115mil|Location2.X=3697.475mil|Location1.Y=3822.209mil|Location2.Y=3941.569mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3578.115mil|Location2.X=3697.475mil|Location1.Y=3822.209mil|Location2.Y=3941.569mil|Absolute=True">Hole Size Constraint (3mm &gt; 2.54mm) : Pad M2-0(80.4mm,73.6mm)  Multi-Layer</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=774.966mil|Location2.X=894.326mil|Location1.Y=3798.588mil|Location2.Y=3917.948mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=774.966mil|Location2.X=894.326mil|Location1.Y=3798.588mil|Location2.Y=3917.948mil|Absolute=True">Hole Size Constraint (3mm &gt; 2.54mm) : Pad M4-0(9.2mm,73mm)  Multi-Layer</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=774.966mil|Location2.X=894.326mil|Location1.Y=2517.091mil|Location2.Y=2636.452mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=774.966mil|Location2.X=894.326mil|Location1.Y=2517.091mil|Location2.Y=2636.452mil|Absolute=True">Hole Size Constraint (3mm &gt; 2.54mm) : Pad M5-0(9.2mm,40.45mm)  Multi-Layer</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=774.966mil|Location2.X=894.326mil|Location1.Y=1235.595mil|Location2.Y=1354.956mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=774.966mil|Location2.X=894.326mil|Location1.Y=1235.595mil|Location2.Y=1354.956mil|Absolute=True">Hole Size Constraint (3mm &gt; 2.54mm) : Pad M3-0(9.2mm,7.9mm)  Multi-Layer</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3578.115mil|Location2.X=3697.475mil|Location1.Y=1235.595mil|Location2.Y=1354.956mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3578.115mil|Location2.X=3697.475mil|Location1.Y=1235.595mil|Location2.Y=1354.956mil|Absolute=True">Hole Size Constraint (3mm &gt; 2.54mm) : Pad M1-0(80.4mm,7.9mm)  Multi-Layer</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="ID12P1K35MMCCOOLR5BFWNPE0E1FCP0JBFLDQ1SSLKTW3NOWNC3VVE"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Un-Routed Net Constraint ( (All) )</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1927.599mil|Location2.X=1955.158mil|Location1.Y=1421.338mil|Location2.Y=1448.897mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1927.599mil|Location2.X=1955.158mil|Location1.Y=1421.338mil|Location2.Y=1448.897mil|Absolute=True">Isolated copper: Split Plane  (3.3VDC_ISO)  on Internal Plane 1. Dead copper detected. Copper area is : 0.18 sq. mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1928.807mil|Location2.X=1951.98mil|Location1.Y=1376.062mil|Location2.Y=1401.653mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1928.807mil|Location2.X=1951.98mil|Location1.Y=1376.062mil|Location2.Y=1401.653mil|Absolute=True">Isolated copper: Split Plane  (3.3VDC_ISO)  on Internal Plane 1. Dead copper detected. Copper area is : 0.15 sq. mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2438.937mil|Location2.X=2705.157mil|Location1.Y=3662.165mil|Location2.Y=3928.385mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2438.937mil|Location2.X=2705.157mil|Location1.Y=3662.165mil|Location2.Y=3928.385mil|Absolute=True">Un-Routed Net Constraint: Unplated Pad MOD2-17(53.33mm,71.4mm)  Multi-Layer</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=712.535mil|Location2.X=956.756mil|Location1.Y=2454.661mil|Location2.Y=3980.378mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=712.535mil|Location2.X=956.756mil|Location1.Y=2454.661mil|Location2.Y=3980.378mil|Absolute=True">Un-Routed Net Constraint: Net CHASSIS Between Pad M5-0 [Unplated] (9.2,40.45mm) And Pad M4-0 [Unplated] (9.2,73mm)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=712.535mil|Location2.X=956.756mil|Location1.Y=1173.165mil|Location2.Y=2698.882mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=712.535mil|Location2.X=956.756mil|Location1.Y=1173.165mil|Location2.Y=2698.882mil|Absolute=True">Un-Routed Net Constraint: Net CHASSIS Between Pad M3-0 [Unplated] (9.2,7.9mm) And Pad M5-0 [Unplated] (9.2,40.45mm)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3515.685mil|Location2.X=3759.905mil|Location1.Y=1173.165mil|Location2.Y=4003.999mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3515.685mil|Location2.X=3759.905mil|Location1.Y=1173.165mil|Location2.Y=4003.999mil|Absolute=True">Un-Routed Net Constraint: Net CHASSIS Between Pad M2-0 [Unplated] (80.4,73.6mm) And Pad M1-0 [Unplated] (80.4,7.9mm)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=712.535mil|Location2.X=3759.905mil|Location1.Y=1173.165mil|Location2.Y=1417.386mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=712.535mil|Location2.X=3759.905mil|Location1.Y=1173.165mil|Location2.Y=1417.386mil|Absolute=True">Un-Routed Net Constraint: Net CHASSIS Between Pad M3-0 [Unplated] (9.2,7.9mm) And Pad M1-0 [Unplated] (80.4,7.9mm)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3504.685mil|Location2.X=3770.905mil|Location1.Y=1162.165mil|Location2.Y=1428.386mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3504.685mil|Location2.X=3770.905mil|Location1.Y=1162.165mil|Location2.Y=1428.386mil|Absolute=True">Un-Routed Net Constraint: Unplated Pad M1-0(80.4mm,7.9mm)  Multi-Layer</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=701.535mil|Location2.X=967.756mil|Location1.Y=1162.165mil|Location2.Y=1428.386mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=701.535mil|Location2.X=967.756mil|Location1.Y=1162.165mil|Location2.Y=1428.386mil|Absolute=True">Un-Routed Net Constraint: Unplated Pad M3-0(9.2mm,7.9mm)  Multi-Layer</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=701.535mil|Location2.X=967.756mil|Location1.Y=2443.661mil|Location2.Y=2709.882mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=701.535mil|Location2.X=967.756mil|Location1.Y=2443.661mil|Location2.Y=2709.882mil|Absolute=True">Un-Routed Net Constraint: Unplated Pad M5-0(9.2mm,40.45mm)  Multi-Layer</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=701.535mil|Location2.X=967.756mil|Location1.Y=3725.157mil|Location2.Y=3991.378mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=701.535mil|Location2.X=967.756mil|Location1.Y=3725.157mil|Location2.Y=3991.378mil|Absolute=True">Un-Routed Net Constraint: Unplated Pad M4-0(9.2mm,73mm)  Multi-Layer</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3504.685mil|Location2.X=3770.905mil|Location1.Y=3748.779mil|Location2.Y=4014.999mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\shawn\OneDrive\Shawn\electronic load\Cicuit Studio\Rev 2\Control Board\ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3504.685mil|Location2.X=3770.905mil|Location1.Y=3748.779mil|Location2.Y=4014.999mil|Absolute=True">Un-Routed Net Constraint: Unplated Pad M2-0(80.4mm,73.6mm)  Multi-Layer</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>

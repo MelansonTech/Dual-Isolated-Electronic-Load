@@ -1,0 +1,14 @@
+Project Outputs Generation Report
+---------------------------------
+Start Output Generation At 2:47:59 PM On 4/10/2021
+
+Output: ExportSTEP
+Type  : ExportSTEP
+From  : Variant [[No Variations]] of PCB Document [E-Load Gen 2 Power Module Rev 3.CSPcbDoc]
+   Generated File[E-Load Gen 2 Power Module Rev 3.step]
+
+
+Files Generated   : 1
+Documents Printed : 0
+
+Finished Output Generation At 2:48:41 PM On 4/10/2021

@@ -1,0 +1,6 @@
+
+***KPE\keypad error checking - doesn't always reg a press (if page 5 --while kpe and cancel are true -- need a cancel flag
+
+Change all nex interups to variable checks
+
+

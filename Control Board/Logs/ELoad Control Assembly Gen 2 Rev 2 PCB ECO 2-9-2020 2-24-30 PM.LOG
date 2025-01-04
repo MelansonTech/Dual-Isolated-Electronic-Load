@@ -1,0 +1,3 @@
+Removed Member From Class: ClassName=Low Current Member=SD MECH SUPPORT
+Removed Member From Class: ClassName=Low Volt Member=SD MECH SUPPORT
+Added Pin To Net: NetName=GND_ISO Pin=MOD2-17

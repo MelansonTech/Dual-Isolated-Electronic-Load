@@ -1,0 +1,24 @@
+---------------------------------------------------------------------------
+NCDrill File Report For: ELoad Control Assembly Gen 2 Rev 2.CSPcbDoc   5/2/2020  12:31:43 PM
+---------------------------------------------------------------------------
+
+Layer Pair : Top Layer to Bottom Layer
+ASCII Plated RoundHoles File : ELoad Control Assembly Gen 2 Rev 2-RoundHoles-Plated.TXT
+ASCII Non-Plated RoundHoles File : ELoad Control Assembly Gen 2 Rev 2-RoundHoles-NonPlated.TXT
+ASCII Non-Plated SlotHoles File : ELoad Control Assembly Gen 2 Rev 2-SlotHoles-NonPlated.TXT
+EIA File   : ELoad Control Assembly Gen 2 Rev 2.DRL
+
+Tool         Hole Size           Hole Type     Hole Count Plated       Tool Travel
+---------------------------------------------------------------------------
+T1        0.3mm (11.811mil)        Round          104              495.09 mm (19.49 Inch)
+T2        0.8mm (31.496mil)        Round          12               28.90 mm (1.14 Inch)
+T3        1mm (39.37mil)           Round          36               223.51 mm (8.80 Inch)
+T4        1.016mm (40mil)          Round          4                35.67 mm (1.40 Inch)
+T5        2.6mm (102.362mil)       Round          4                75.97 mm (2.99 Inch)
+T6        2mm (78.74mil)           Slot           3         NPTH   7317.32 mm (288.08 Inch)
+T7        3mm (118.11mil)          Round          5         NPTH   253.24 mm (9.97 Inch)
+T8        3.5mm (137.795mil)       Round          1         NPTH   0.00 mm (0.00 Inch)
+---------------------------------------------------------------------------
+Totals                                            169              8429.70 mm (331.88 Inch)
+
+Total Processing Time (hh:mm:ss) : 00:00:00

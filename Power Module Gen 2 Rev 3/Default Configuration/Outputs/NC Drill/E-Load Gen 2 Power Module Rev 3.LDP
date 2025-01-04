@@ -1,0 +1,3 @@
+Layer Pairs Export File for PCB: E:\OneDrive\Shawn\electronic load\Circuit Studio\Rev 2\Power Module Gen 2 Rev 3\E-Load Gen 2 Power Module Rev 3.CSPcbDoc
+LayersSetName=Top_Bot_Plated_Thru_Holes|DrillFile=e-load gen 2 power module rev 3-plated.txt|LayerPairs=gtl,gbl
+LayersSetName=Top_Bot_NonPlated_Thru_Holes|DrillFile=e-load gen 2 power module rev 3-nonplated.txt|LayerPairs=gtl,gbl
